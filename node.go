@@ -6,7 +6,7 @@
 
 * Creation Date : 03-27-2015
 
-* Last Modified : Fri 05 Jun 2015 12:11:58 PM PDT
+* Last Modified : Fri 05 Jun 2015 12:25:02 PM PDT
 
 * Created By : Kiyor
 
@@ -79,7 +79,6 @@ func in(list []string, str string) (has bool) {
 }
 
 func (f *DNSFile) RemoveAnycase(anycastlist []string) *DNSFile {
-
 	var nf DNSFile
 	for _, v := range *f {
 		if !in(anycastlist, v.Ip) {
@@ -99,9 +98,7 @@ func (f *DNSFile) UniqCity() *DNSFile {
 					m[d.City] = *d
 				}
 			} else {
-				if d.Ip != "114.114.114.114" {
-					m[d.City] = *d
-				}
+				m[d.City] = *d
 			}
 		}
 	}
